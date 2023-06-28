@@ -4,7 +4,7 @@
 
 Un string est une suite de caractères. C'est la base de tout texte en programmation. Les strings peuvent contenir des lettres, des chiffres, des charactères speciaux, et avec les encodages modernes, toutes formes d'émojis et d'alphabets étrangers.
 
-## En quoi c'est un problème ?
+## Quels en sont les défis ?
 
 En C, les strings sont connus pour être difficiles à prendre en main. Ils sont souvent la première introduction à la mémoire, une sorte de baptême un peu violent. Même après les premières fois, les strings offrent de temps à autres des mauvaises surprises et peuvent être source de peur.
 
