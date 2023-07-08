@@ -1,12 +1,14 @@
 # Introduction
 
-## Qu'est ce qu'un string ?
-
-Un string est une suite de caractères. C'est la base de tout texte en programmation. Les strings peuvent contenir des lettres, des chiffres, des charactères speciaux, et avec les encodages modernes, toutes formes d'émojis et d'alphabets étrangers.
+Bienvenue sur *42 String docs*, une documentation complète sur les strings en C. Les strings sont la base de tout texte en programmation. Ils peuvent contenir des lettres, des chiffres, et toutes sortes de caractères spéciaux. Si vous êtes sur cette documentation, vous en avez sûrement déjà utilisé. Mais les connaissez-vous vraiment ?
 
 ## Quels en sont les défis ?
+En C, les strings sont connus pour être difficiles à prendre en main. Ils sont souvent la première introduction à la mémoire, une sorte de baptême un peu violent. Voici quelques unes des difficultés initiales qui accompagnent l'apprentissage des strings :
+- terminer par `\0`
+- les allocations dynamiques (malloc)
+- les allocations dynamiques
 
-En C, les strings sont connus pour être difficiles à prendre en main. Ils sont souvent la première introduction à la mémoire, une sorte de baptême un peu violent. Même après les premières fois, les strings offrent de temps à autres des mauvaises surprises et peuvent être source de peur.
+Même après les premières fois, les strings offrent de temps à autres des mauvaises surprises et peuvent être source de peur
 
 ## Le but de cette documentation
 

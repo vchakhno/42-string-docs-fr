@@ -1,1 +1,0 @@
-# Les character literals

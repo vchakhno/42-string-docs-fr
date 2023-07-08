@@ -3,4 +3,4 @@ authors = ["Velimir Chakhnovski"]
 language = "fr"
 multilingual = false
 src = "src"
-title = "Tout sur les strings en C"
+title = "42 String docs"
