@@ -1,15 +1,21 @@
 ### Bases des chars
 Cette partie explique l'utilisation la plus basique des chars. Normalement l'écrasante majorité des studs a déjà ces notions.
 - character literals
-- print un char (`write`, `printf %c`)
+- print un char avec `putchar`
 - table ASCII
-- sequences d'échappement communes (`\'`, `\\`, `\n`, `\t`) 
+- sequences d'échappement communes (`\n`, `\'`, `\\`, `\t`) 
 - intervalle, `signed`, `unsigned`
 - arithmetique
-- fonctions typiques sur les chars (isspace, isalnum, isupper)
+- fonctions typiques sur les chars (isupper, isalnum, isspace)
+
+### Print un char
+Cette partie n'est pas essentielle mais appronfondit une notion de la partie précédente
+- avec `write` / `fwrite`
+- avec `putc` / `fputc`
+- avec `printf`
 
 ### Bases des strings
-Fondamentaux des strings. On se concentre sur l'utilisation et pas la manipulation. Je ne sais pas si je mets l'écriture dedans où dans une partie plus tard.
+Fondamentaux des strings. On se concentre sur l'utilisation et pas la manipulation. Je ne sais pas si je mets l'écriture (dans le sens modification, pas print) dedans où dans une partie plus tard.
 - string literals
 - print un string (`write`, `printf %s`)
 - représentation mémoire (avec le \0)
@@ -36,6 +42,7 @@ Les bases de malloc, au même niveau que la libft. Pas de réallocation, pas de 
 ### Strings const
 Pas grand chose à dire ici. C'est sympa de savoir les différences de placement de const, mais pas essentiel. Pareil, ce n'est peut-être pas une bonne idée de montrer maintenant qu'on peut virer le const. Je voudrais mettre des parties plus essentielles avant, mais je vois pas quoi. Et ce serait bien d'avoir plus de contenu dans celle-ci.
 - Erreur de compilation si modifiés
+- Peuvent être lus/copiés sans problème
 - `const char *str` vs `char const *str*` vs `char *const str`
 - cast en `char *` pour virer const
 
