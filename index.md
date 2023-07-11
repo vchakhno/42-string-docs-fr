@@ -1,88 +1,89 @@
-- Bases des chars
-	Cette partie explique l'utilisation la plus basique des chars. Normalement l'écrasante majorité des studs a déjà ces notions.
-	- character literals
-	- table ascii
-	- sequences d'échappement communes (`\'`, `\\`, `\n`, `\t`) 
-	- range, signed, unsigned
-	- arithmetique
-	- fonctions typiques sur les chars (isspace, isalnum, isupper)
+### Bases des chars
+Cette partie explique l'utilisation la plus basique des chars. Normalement l'écrasante majorité des studs a déjà ces notions.
+- character literals
+- print un char (`write`, `printf %c`)
+- table ASCII
+- sequences d'échappement communes (`\'`, `\\`, `\n`, `\t`) 
+- intervalle, `signed`, `unsigned`
+- arithmetique
+- fonctions typiques sur les chars (isspace, isalnum, isupper)
 
- - Bases des strings
-	Fondamentaux des strings. On se concentre sur l'utilisation et pas la manipulation. Je ne sais pas si je mets l'écriture dedans où dans une partie plus tard.
-	- string literals
-	- print un string (write, printf)
-	- représentation mémoire (avec le \0)
-	- fonctions typiques sur les strings (strlen, stcmp, atoi)
-	- essai d'écrire dans `char *str = ""`. introduction de `char str[] = ""` juste pour permettre l'écriture (str_toupper)
+### Bases des strings
+Fondamentaux des strings. On se concentre sur l'utilisation et pas la manipulation. Je ne sais pas si je mets l'écriture dedans où dans une partie plus tard.
+- string literals
+- print un string (`write`, `printf %s`)
+- représentation mémoire (avec le \0)
+- fonctions typiques sur les strings (strlen, stcmp, atoi)
+- essai d'écrire dans `char *str = ""`. introduction de `char str[] = ""` juste pour permettre l'écriture (str_toupper)
 
-- Arithmetique de pointeurs
-	Juste avec des strings simples pour l'instant, pas de tableaux de strings.
-	Je suis pas sur de la pertinence/importance des sous parties.
-	La notion sur memset aurait peut-être sa place dans une autre partie.
-	- Notation `*(str + i)`
-	- Bouger le pointeur de str directement (strchr)
-	- `++str` vs `str++`
-	- `(*str)++` vs `*str++` vs `*(str++)`
-	- Utiliser les `char *` pour remplacer byte par byte (memset)
+### Arithmetique de pointeurs
+Juste avec des strings simples pour l'instant, pas de tableaux de strings.
+Je suis pas sur de la pertinence/importance des sous parties.
+La notion sur memset aurait peut-être sa place dans une autre partie.
+- Notation `*(str + i)`
+- Bouger le pointeur de str directement (strchr)
+- `++str` vs `str++`
+- `(*str)++` vs `*str++` vs `*(str++)`
+- Utiliser les `char *` pour remplacer byte par byte (memset)
 
-- Strings aloués dynamiquement
-	Les bases de malloc, au même niveau que la libft. Pas de réallocation, pas de structure pour conserver la len ou la capacité. Montrer avec valgrind.
-	- Taille définie au runtime : malloc (sans oublier +1 pour `\0`)
-	- Ne pas oublier de free (sinon leak !)
-	- Ne pas oublier de vérifier le malloc !
-	- strdup, itoa, strjoin, strtrim, repeatstr
+### Strings aloués dynamiquement
+Les bases de malloc, au même niveau que la libft. Pas de réallocation, pas de structure pour conserver la len ou la capacité. Montrer avec valgrind.
+- Taille définie au runtime : malloc (sans oublier +1 pour `\0`)
+- Ne pas oublier de free (sinon leak !)
+- Ne pas oublier de vérifier le malloc !
+- strdup, itoa, strjoin, strtrim, repeatstr
 
-- Strings const
-	Pas grand chose à dire ici. C'est sympa de savoir les différences de placement de const, mais pas essentiel. Pareil, ce n'est peut-être pas une bonne idée de montrer maintenant qu'on peut virer le const. Je voudrais mettre des parties plus essentielles avant, mais je vois pas quoi. Et ce serait bien d'avoir plus de contenu dans celle-ci.
-	- Erreur de compilation si modifiés
-	- `const char *str` vs `char const *str*` vs `char *const str`
-	- cast en `char *` pour virer const
+### Strings const
+Pas grand chose à dire ici. C'est sympa de savoir les différences de placement de const, mais pas essentiel. Pareil, ce n'est peut-être pas une bonne idée de montrer maintenant qu'on peut virer le const. Je voudrais mettre des parties plus essentielles avant, mais je vois pas quoi. Et ce serait bien d'avoir plus de contenu dans celle-ci.
+- Erreur de compilation si modifiés
+- `const char *str` vs `char const *str*` vs `char *const str`
+- cast en `char *` pour virer const
 
-- Copie de strings
-	Apparemment pas dans mes notes ..? Très content d'y avoir pensé là. C'est essentiel et c'était pas couvert. Ça prend sa place juste avant les lifetime, niquel. Par contre ça fait beaucoup d'avoir la copie du contenu, la (non-)copie à la déclaration, et les déclarations de fonctions dans le même chapitre.
-	- Copie dans un buffer de taille fixe (strcpy, strncpy)
-	- Copie de taille dynamique (strdup)
-	- `char *str2 = str1;` Pas de copie, pointe vers l'original
-	- `char str2[] = str1;` Pas de copie, erreur de compilation.
-	- Par contre copie valide si on copie une struct qui contient un `char [N]`
-	- Passer un `char *` ou un `char []` en argument passe toujours le pointeur, pas une copie.
-	- Pas possible de return un `char []` (compile pas)
+### Copie de strings
+Apparemment pas dans mes notes ..? Très content d'y avoir pensé là. C'est essentiel et c'était pas couvert. Ça prend sa place juste avant les lifetime, niquel. Par contre ça fait beaucoup d'avoir la copie du contenu, la (non-)copie à la déclaration, et les déclarations de fonctions dans le même chapitre.
+- Copie dans un buffer de taille fixe (strcpy, strncpy)
+- Copie de taille dynamique (strdup)
+- `char *str2 = str1;` Pas de copie, pointe vers l'original
+- `char str2[] = str1;` Pas de copie, erreur de compilation.
+- Par contre copie valide si on copie une struct qui contient un `char [N]`
+- Passer un `char *` ou un `char []` en argument passe toujours le pointeur, pas une copie.
+- Pas possible de return un `char []` (compile pas)
 
-- Lifetime des strings
-	Peut-être un peu complexe pour être abordé tout de suite, mais c'est une notion qui m'a l'air essentielle ? Montrer avec valgrind.
-	- lifetime des variables locales : commencer par return `&c` pour tester (erreur)
-	- lifetime d'un string literal : global
-	- lifetime d'un `char *str = ""`, pareil donc global
-	- lifetime d'un `char str[] = ""`, local
-	- lifetime d'un `char *str = malloc()`, global (enfin manuel jusqu'au free)
+### Lifetime des strings
+Peut-être un peu complexe pour être abordé tout de suite, mais c'est une notion qui m'a l'air essentielle ? Montrer avec valgrind.
+- lifetime des variables locales : commencer par return `&c` pour tester (erreur)
+- lifetime d'un string literal : global
+- lifetime d'un `char *str = ""`, pareil donc global
+- lifetime d'un `char str[] = ""`, local
+- lifetime d'un `char *str = malloc()`, global (enfin manuel jusqu'au free)
 
-- Tableaux de strings
-	Todo: beaucoup à dire mais je sais pas dans quel ordre tout mentionner. En tout cas ça me semble le bon endroit pour placer cette partie.
+### Tableaux de strings
+Todo: beaucoup à dire mais je sais pas dans quel ordre tout mentionner. En tout cas ça me semble le bon endroit pour placer cette partie.
 
-- Réallocation de strings
-	Je parle d'append à un string, style get_next_line. L'idée c'est juste de montrer comment s'implémentent les différentes méthodes et de parler des avantages et inconvénients.
-	- Réallocation naïve
-	- Par puissances de 2
-	- Par liste chainée
+### Réallocation de strings
+Je parle d'append à un string, style get_next_line. L'idée c'est juste de montrer comment s'implémentent les différentes méthodes et de parler des avantages et inconvénients.
+- Réallocation naïve
+- Par puissances de 2
+- Par liste chainée
 
 [Surement des parties ici]
 
-- Encodages
-	Nécessite plus de recherche
-	- unicode dans une string "😃"
-	- unicode en tant qu'identifier 😃 = 4
-	- unicode escape sequences \U, \u
-	- wchar_t & wide character literals L"..."
+### Encodages
+Nécessite plus de recherche
+- unicode dans une string "😃"
+- unicode en tant qu'identifier 😃 = 4
+- unicode escape sequences \U, \u
+- wchar_t & wide character literals L"..."
 
-- String literals en profondeur
-	Non essentiel. Très simple. C'est plus du trivia. Peut être abordé n'importe quand, si possible après les choses réellement utiles. Pas beaucoup de contenu.
-	- auto concaténation
-	- type `char []` et donc sizeof valide
-	- arithmétique de pointeur directement sur le literal
-	- coupure de literal avec `\0`
+### String literals en profondeur
+Non essentiel. Très simple. C'est plus du trivia. Peut être abordé n'importe quand, si possible après les choses réellement utiles. Pas beaucoup de contenu.
+- auto concaténation
+- type `char []` et donc sizeof valide
+- arithmétique de pointeur directement sur le literal
+- coupure de literal avec `\0`
 
-- Taille des char
-	Ça c'est plus un errata sur la partie des bases, et un peu de trivia. Ça ne mérite pas vraiment son propre chapitre, mais ce serait bien de les ajouter pour la complétion.
-	- CHAR_BIT
-	- char literals : `sizeof('a') == 4`
-	- promotion historique en int
+### Taille des char
+Ça c'est plus un errata sur la partie des bases, et un peu de trivia. Ça ne mérite pas vraiment son propre chapitre, mais ce serait bien de les ajouter pour la complétion.
+- CHAR_BIT
+- char literals : `sizeof('a') == 4`
+- promotion historique en int
