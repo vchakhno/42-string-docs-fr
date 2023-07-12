@@ -5,7 +5,9 @@ Cette partie explique l'utilisation la plus basique des chars. Normalement l'éc
 En tout premier, logiquement. C'est un chapitre essentiel.
 ### Notions
 - character literals
-- print un char avec `putchar`
+- print un char dans la sortie standard avec `putchar` et `printf %c`
+- read un char dans l'entrée sortie standard avec `getchar` et `scanf %c`
+- mini-cat (boucle avec getchar-putchar) (pas essentiel mais sympa)
 - table ASCII
 - sequences d'échappement communes (`\n`, `\'`, `\\`, `\t`) 
 - intervalle, `signed`, `unsigned`
@@ -19,7 +21,8 @@ Fondamentaux des strings. On se concentre sur l'utilisation et pas la manipulati
 Vient après les Bases des chars. Chapitre essentiel.
 ### Notions
 - string literals
-- print un string (`puts` write`, `printf %s`)
+- print un string dans la sortie standard avec `puts` et `printf %s`
+- read un string dans l'entrée standard avec `gets` et `scanf %s`
 - représentation mémoire (avec le \0)
 - fonctions typiques sur les strings (strlen, stcmp, atoi)
 - essai d'écrire dans `char *str = ""`. introduction de `char str[] = ""` juste pour permettre l'écriture (str_toupper)
@@ -45,6 +48,9 @@ Pas grand chose à dire ici. C'est sympa de savoir les différences de placement
 - `const char *str` vs `char const *str` vs `char *const str`
 - cast en `char *` pour virer const
 
+## Tableaux de chars
+TODO
+
 ## Copie de strings
 Apparemment pas dans mes notes ..? Très content d'y avoir pensé là. C'est essentiel et c'était pas couvert. Ça prend sa place juste avant les lifetime, niquel. Par contre ça fait beaucoup d'avoir la copie du contenu, la (non-)copie à la déclaration, et les déclarations de fonctions dans le même chapitre.
 - Copie dans un buffer de taille fixe (strcpy, strncpy)
@@ -62,6 +68,19 @@ Les bases de malloc, au même niveau que la libft. Pas de réallocation, pas de 
 - Ne pas oublier de vérifier le malloc !
 - strdup, itoa, strjoin, strtrim, repeatstr
 
+## Écrire/lire un char dans un fichier
+TODO
+### Notions
+- `open` et `close`
+- `write`, `dprintf %c`, `putc/fputc`, `fprintf %c`
+- `read`, `dscanf %c`, `getc/fgetc`, `fscanf %c`
+
+## Écrire/lire un string dans un fichier
+TODO
+### Notions
+- `write`, `dprintf %s`, `puts/fputs`, `fprintf %s`
+- `read`, `dscanf %s`, `gets/fgets`, `fscanf %s`
+
 ## Lifetime des strings
 Peut-être un peu complexe pour être abordé tout de suite, mais c'est une notion qui m'a l'air essentielle ? Montrer avec valgrind.
 - lifetime des variables locales : commencer par return `&c` pour tester (erreur)
@@ -78,6 +97,9 @@ Je parle d'append à un string, style get_next_line. L'idée c'est juste de mont
 - Réallocation naïve
 - Par puissances de 2
 - Par liste chainée
+
+## Read dans un buffer dynamique
+TODO
 
 [Surement des parties ici]
 
