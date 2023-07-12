@@ -41,84 +41,127 @@ Doit bien sur être après les Bases des strings, mais pas necessairement collé
 - `(*str)++` vs `*str++` vs `*(str++)`
 - Utiliser les `char *` pour remplacer byte par byte (memset)
 
+## Tableaux de chars (déclaration)
+### Description
+Parle de détails de la déclaration des tableaux de chars. Ne parle pas de leur lifetime, c'est abordé dans un autre chapitre. Les tableaux sont syntaxiquement assez rigide donc il y a plusieurs règles à suivre.
+### Placement et utilité
+Doit suivre les Bases des chars, pour comparer avec les `char *` qui sont immutables. Doit précéder les string alloués pour comparer avec leur taille dynamique.
+### Notions
+- uniquement `char str[] = "..."` ou `char str[] = {...}`, y assigner un `char *` ou un `char []` provoque une erreur de compilation
+- on ne peut pas séparer la définition de la déclaration, une fois déclaré on ne peut pas assigner à un `char []`
+- taille déduite à la compilation si est omise.
+- le string est tronqué si la taille est trop petite
+- si la taille est trop grande, rien de particulier juste plus de place
+- si la taille dépend d'une variable, ça créé un VLA (peut-être pour plus tard ?)
+- comme montré précédemment, modifiable
+- peut-être d'autres notions, comme print les addresses pour montrer que les chars sont sur la stack
+
 ## Strings const
+### Description
+Partie à propos du __modifier__ const. Pas des string literals, qui sont pas écrivables. Mais des strings qui ont const dans leur déclaration. C'est le cas de beaucoup de fonctions de la lib standard.
+### Placement et utilité
 Pas grand chose à dire ici. C'est sympa de savoir les différences de placement de const, mais pas essentiel. Pareil, ce n'est peut-être pas une bonne idée de montrer maintenant qu'on peut virer le const. Je voudrais mettre des parties plus essentielles avant, mais je vois pas quoi. Et ce serait bien d'avoir plus de contenu dans celle-ci.
-- Erreur de compilation si modifiés
-- Peuvent être lus/copiés sans problème
+### Notions
+- erreur de compilation si modifiés
+- peuvent être lus/copiés sans problème
 - `const char *str` vs `char const *str` vs `char *const str`
 - cast en `char *` pour virer const
 
-## Tableaux de chars
-TODO
-
 ## Copie de strings
-Apparemment pas dans mes notes ..? Très content d'y avoir pensé là. C'est essentiel et c'était pas couvert. Ça prend sa place juste avant les lifetime, niquel. Par contre ça fait beaucoup d'avoir la copie du contenu, la (non-)copie à la déclaration, et les déclarations de fonctions dans le même chapitre.
-- Copie dans un buffer de taille fixe (strcpy, strncpy)
-- Copie de taille dynamique (strdup)
+### Description
+Montre comment copier le contenu d'un string à un autre.
+Ça fait beaucoup d'avoir la copie du contenu, la (non-)copie à la déclaration, et les déclarations de fonctions dans le même chapitre.
+### Placement et utilité
+Doit être après les strings const pour montrer comment utiliser le contenu d'une string const quand même.
+Doit être après les tableaux de chars, car ils servent généralement de destination à la copie.
+Doit être avant les string alloués, car ils utilisent beaucoup la copie. Surtout pour les réallocations en fait, mais ça vient plus tard.
+### Notions
+- copie dans un buffer de taille fixe (memcpy, strcpy, strncpy)
+- copie de taille dynamique (strdup)
 - `char *str2 = str1;` Pas de copie, pointe vers l'original
 - `char str2[] = str1;` Pas de copie, erreur de compilation.
-- Par contre copie valide si on copie une struct qui contient un `char [N]`
-- Passer un `char *` ou un `char []` en argument passe toujours le pointeur, pas une copie.
-- Pas possible de return un `char []` (compile pas)
+- par contre copie valide si on copie une struct qui contient un `char [N]`
+- passer un `char *` ou un `char []` en argument passe toujours le pointeur, pas une copie.
+- pas possible de return un `char []` (compile pas)
 
 ## Strings alloués dynamiquement (malloc)
-Les bases de malloc, au même niveau que la libft. Pas de réallocation, pas de structure pour conserver la len ou la capacité. Montrer avec valgrind.
-- Taille définie au runtime : malloc (sans oublier +1 pour `\0`)
-- Ne pas oublier de free (sinon leak !)
-- Ne pas oublier de vérifier le malloc !
+### Description
+Les bases de malloc, dans l'utilisation on est au même niveau que la libft. Pas de réallocation, pas de structure pour conserver la len ou la capacité.
+Il faut bien insister sur les leaks, le check de NULL. Montrer avec valgrind.
+### Placement et utilité
+Après les tableaux de strings, pour comparer la taille fixe des `char []` avec la taille dynamique donnée à malloc.
+### Notions
+- taille définie au runtime : malloc (sans oublier +1 pour `\0`)
+- ne pas oublier de free (sinon leak !)
+- ne pas oublier de vérifier le malloc !
 - strdup, itoa, strjoin, strtrim, repeatstr
 
-## Écrire/lire un char dans un fichier
-TODO
+## Écrire/lire dans un fichier
+### Description
+Le nom de la partie est assez explicite. Couvre open/close et les chars.
+Parler de buffered/unbuffered. Dire que c'est + efficace de faire un write plutôt que plusieurs.
+### Placement et utilité
+Les fd et `FILE *` sont perturbants au début, donc j'ai repoussé cette section à ici. Il n'y a pas vraiment de raison pour le placement ici spécifiquement, mais les autres chapitres étaient plus importants donc ils viennent avant.
 ### Notions
 - `open` et `close`
-- `write`, `dprintf %c`, `putc/fputc`, `fprintf %c`
-- `read`, `dscanf %c`, `getc/fgetc`, `fscanf %c`
-
-## Écrire/lire un string dans un fichier
-TODO
-### Notions
-- `write`, `dprintf %s`, `puts/fputs`, `fprintf %s`
-- `read`, `dscanf %s`, `gets/fgets`, `fscanf %s`
+- écrire un char : `write`, `dprintf %c`, `putc/fputc`, `fprintf %c` -> ft_putnbr
+- lire un char : `read`, `dscanf %c`, `getc/fgetc`, `fscanf %c` -> ft_getnbr ?
+- écrire un string : `write`, `dprintf %s`, `puts/fputs`, `fprintf %s`
+- lire un string : `read`, `dscanf %s`, `gets/fgets`, `fscanf %s`
+- peut-être des manips de fichier/fd ? (setbuf, lseek, dup, pipe...)
 
 ## Lifetime des strings
-Peut-être un peu complexe pour être abordé tout de suite, mais c'est une notion qui m'a l'air essentielle ? Montrer avec valgrind.
+### Description
+Montrer la durée de vie des strings. C'est vraiment un point important des strings à mes yeux, et des pointeurs en général. C'est une des grosses difficultés du C/C++ de savoir quand est valide un pointeur.
+Normalement c'est pas necessaire jusque là, mais c'est vraiment important et un peu avancé donc je suis content d'avoir une chapitre si tardif mais si important.
+### Placement et utilité
+Je voulais le mettre après avoir introduit les 3 types de strings : litéraux, tableaux, dynamiques. C'est surtout important pour les tableaux donc ça serait bien qu'ils soient un peu plus reliés. C'est aussi pour ça que je l'ai mis avant les tableaux de strings, parce que sinon les utiliser c'est juste suivre une méthode toute faite, ou se tirer dans le pied.
+### Notions
 - lifetime des variables locales : commencer par return `&c` pour tester (erreur)
-- lifetime d'un string literal : global
-- lifetime d'un `char *str = ""`, pareil donc global
+- lifetime d'un string literal ou de `char *str = ""`, global
 - lifetime d'un `char str[] = ""`, local
 - lifetime d'un `char *str = malloc()`, global (enfin manuel jusqu'au free)
+- lifetime d'un `char str[]` en tant que variable globale
+- lifetime d'un `char str[]` en tant que variable statique (/singleton)
 
 ## Tableaux de strings
 Todo: beaucoup à dire mais je sais pas dans quel ordre tout mentionner. En tout cas ça me semble le bon endroit pour placer cette partie.
 
 ## Réallocation de strings
+### Description
 Je parle d'append à un string, style get_next_line. L'idée c'est juste de montrer comment s'implémentent les différentes méthodes et de parler des avantages et inconvénients.
-- Réallocation naïve
-- Par puissances de 2
-- Par liste chainée
+### Notions
+- réallocation naïve
+- par puissances de 2
+- par liste chainée
 
 ## Read dans un buffer dynamique
 TODO
+Littéralement GNL ? 
 
 [Surement des parties ici]
 
 ## Encodages
 Nécessite plus de recherche
+### Notions
 - unicode dans une string "😃"
 - unicode en tant qu'identifier 😃 = 4
 - unicode escape sequences \U, \u
 - wchar_t, wide character literals L'...', wide string literals L"..."
 
 ## String literals en profondeur
+### Placement et utilité
 Non essentiel. Très simple. C'est plus du trivia. Peut être abordé n'importe quand, si possible après les choses réellement utiles. Pas beaucoup de contenu.
+### Notions
 - auto concaténation
 - type `char []` et donc sizeof valide
 - arithmétique de pointeur directement sur le literal
 - coupure de literal avec `\0`
 
 ## Taille des char
+### Placement et utilité
 Ça c'est plus un errata sur la partie des bases, et un peu de trivia. Ça ne mérite pas vraiment son propre chapitre, mais ce serait bien de les ajouter pour la complétion.
+### Notions
 - CHAR_BIT
 - char literals : `sizeof('a') == 4`
 - promotion historique en int
