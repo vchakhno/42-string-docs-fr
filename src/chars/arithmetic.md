@@ -1,4 +1,4 @@
-Il existe une famille de type contenant des valeurs représentant des entiers : `long`, `int`, `short`, `char`, `long long` (ainsi que leur version non-signé)
+Il existe une famille de types, contenant des valeurs représentant des entiers : `long`, `int`, `short`, `char`, `long long` (ainsi que leur version non-signé)
 <br>
 Plusieurs opérations arithmétique entre des données de ces types `entiers` sont possible en C : Les additions, soustractions, multiplications, divisions, modulo, incrémentation et décrémentation :
 
