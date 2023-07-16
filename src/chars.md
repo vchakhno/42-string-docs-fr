@@ -10,7 +10,7 @@ Ici, à l'adresse mémoire de notre variable `random`, sera stocké notre entier
 
 Etant limité à 8 bits, nous sommes donc intrinséquement limité à 256 valeurs différentes représentable. De l'entier `0` représenté en binaire par `0000 0000` - à l'entier `255` représenté en binaire par `1111 1111`.[^1]
 
-On pourrait aussi écrire indiqué le caractère que l'on souhaite stocké directement durant l'initialisation :
+On pourrait aussi indiqué le caractère que l'on souhaite stocké directement durant l'initialisation :
 
 ```c
 char random = 'a'
