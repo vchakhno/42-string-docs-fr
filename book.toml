@@ -4,3 +4,7 @@ language = "fr"
 multilingual = false
 src = "src"
 title = "42 String docs"
+
+[output.html.playground]
+editable = true
+line-numbers = true
