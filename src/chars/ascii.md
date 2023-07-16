@@ -2,7 +2,7 @@ Il n'est pas nécessaire d'avoir lu les précédents sous-chapitres pour lire ce
 
 # Standard ASCII Table
 
-La table ASCII standarde est un tableau de valeurs, mettant en relation des valeures décimal allant de 0 à 127 (inclus) (et ses homologues en base 2/8/16), avec des caractères.
+La table ASCII standarde est un tableau de valeurs, mettant en relation des valeures décimal allant de 0 à 127 (et ses homologues en base 2/8/16), avec des caractères.
 
 ![Standard ASCII table](../resources/Standard-ASCII-Table_large.webp)
 
