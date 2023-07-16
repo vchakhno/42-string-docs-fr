@@ -1,7 +1,7 @@
 # Les chars
 
 ## Brève description
-Les `char` en C sont un type de donnée contenant une <ins>valeur entière</ins> (1, 45, 30 etc..), représenté par un byte stocké en mémoire.
+Les `char` en C sont un type de donnée contenant une <ins>valeur entière</ins> (1, 45, 30 etc..), représenté par 1 byte stocké en mémoire. C'est le type utilisant la plus petite quantité de mémoire.
 <br>
 C'est lors de l'utilisation d'une fonction de `print` que s'affichera visuellement le caractère correspondant (nous verrons cela par la suite). Mais sinon, garder en tête qu'un char contient un `entier`.
 
@@ -43,7 +43,7 @@ Ici toutes ces valeurs en hexadécimal/binaire/octal représentent ultimement l'
 
 ## Print un char sur le terminal
 
-Pour afficher la caractère [ASCII](chars/ascii.md) correspondant à la valeur stocké dans notre <i>char</i> différentes fonctions utilisé, notamment `printf()` et `putchar()`.
+Pour afficher la caractère [ASCII](chars/ascii.md) correspondant à la valeur stocké dans notre <i>char</i>, différentes fonctions peuvent être utiliser, notamment `printf()` et `putchar()`.
 
 ```c
 #include <stdio.h> # printf
@@ -59,7 +59,8 @@ $> a
 $> 
 ```
 
-Notre variable `letter` contient l'entier 97. Dans la table [ASCII](chars/ascii.md) l'entier 97 correspond au caractère `a`. C'est la fonction `printf()` qui à partir de cet entier, affichera visuellement notre caractère `'a'`. Nous aurions aussi pu utiliser des fonctions similaires tel que `putchar()`.
+Notre variable `letter` contient l'entier `97`. Dans la table [ASCII](chars/ascii.md) l'entier `97` correspond au caractère `a`. C'est la fonction `printf()` qui à partir de cet entier, affichera visuellement notre caractère `'a'`. Nous aurions aussi pu utiliser des fonctions similaires tel que `putchar()`.<br><br>
+Si vous avez bien compris que c'est donc l'entier `97` qui est passé à printf, vous comprendrez que l'on aurait très bien pu stocker cette valeur dans un `int`, voire un `long`, et tenter de l'afficher avec `printf()`, et le résultat aurait été le même.
 
 <hr>
 

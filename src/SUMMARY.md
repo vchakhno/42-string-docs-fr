@@ -5,6 +5,8 @@
 - [Les chars](chars.md)
 	- [Les character literals](chars/character-literals.md)
 	- [L'arithmétique](chars/arithmetic.md)
+	- [Séquence d'échappement](chars/escape-sequence.md)
+	- [Signé/non-signé](chars/escape-sequence.md)
 	- [La table ASCII](chars/ascii.md)
 	- [Les encodages](chars/todo.md)
 - [Les bases des strings](strings-basics.md)
