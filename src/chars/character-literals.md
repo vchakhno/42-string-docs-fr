@@ -14,9 +14,9 @@ Votre compilateur C le remplaçera par sa valeur entière correspondante dans la
 
 La table [ASCII](chars/ascii.md) étant limité par un set de caractères assez réduit, s'il vous venait à l'idée de stocker un `é` par exemple, vous vous retrouverez avec un avertissement voire une erreur de votre compilateur.
 
-Il existe ainsi les `wide character literals`, qui eux permettent de représenter un set de caractère beaucoup plus large, grâce à la table `Unicode`.
+Il existe ainsi les `wide character literals`, qui eux permettent de représenter un set de caractère beaucoup plus large, indiqué par la table `Unicode`.
 
-Leur syntax est est similaire, nous ajoutons simplement un `L` :
+Leur syntax est similaire, nous ajoutons simplement un `L` :
 ```c
 wchar_t random = L'\u00E9';
 ```
