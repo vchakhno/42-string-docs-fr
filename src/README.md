@@ -6,7 +6,6 @@ Bienvenue sur *42 String docs*, une documentation complète sur les strings en C
 En C, les strings sont connus pour être difficiles à prendre en main. Ils sont souvent la première introduction à la mémoire, une sorte de baptême un peu violent. Voici quelques unes des difficultés initiales qui accompagnent l'apprentissage des strings :
 - terminer par `\0`
 - les allocations dynamiques (malloc)
-- les allocations dynamiques
 
 Même après les premières fois, les strings offrent de temps à autres des mauvaises surprises et peuvent être source de peur
 

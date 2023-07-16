@@ -1,1 +1,0 @@
-# Les segments de données
