@@ -3,9 +3,9 @@
 [Introduction](README.md)
 
 - [Les chars](chars.md)
-	- [Les character literals](chars/todo.md)
-	- [L'arithmétique](chars/todo.md)
-	- [La table ASCII](chars/todo.md)
+	- [Les character literals](chars/character-literals.md)
+	- [L'arithmétique](chars/arithmetic.md)
+	- [La table ASCII](chars/ascii.md)
 	- [Les encodages](chars/todo.md)
 - [Les bases des strings](strings-basics.md)
 - [Storage and lifetime](todo.md)
