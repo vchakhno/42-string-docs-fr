@@ -12,7 +12,7 @@ char random = 97;
 Dans ce cas précis : `char random_char = 'a'`, `'a'` est donc un <i>character literal</i>.
 Votre compilateur C le remplaçera par sa valeur entière correspondante dans la table [ASCII](chars/ascii.md), soit `97`. 
 
-La table [ASCII](chars/ascii.md) étant limité par un set de caractères assez réduit, s'il vous venait à l'idée de stocker un `é` par exemple, vous vous retrouverez très vite avec un avertissement voire une erreur de votre compilateur.
+La table [ASCII](chars/ascii.md) étant limité par un set de caractères assez réduit, s'il vous venait à l'idée de stocker un `é` par exemple, vous vous retrouverez avec un avertissement voire une erreur de votre compilateur.
 
 Il existe ainsi les `wide character literals`, qui eux permettent de représenter un set de caractère beaucoup plus large, grâce à la table `Unicode`.
 
