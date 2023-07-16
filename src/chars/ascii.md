@@ -2,16 +2,7 @@ Il n'est pas nécessaire d'avoir lu les précédents sous-chapitres pour lire ce
 
 # Standard ASCII Table
 
-La table ASCII standarde est un tableau de valeurs, mettant en relation des valeures décimales allant de 0 à 127 (inclus), avec des caractères.
-
-Exemple d'une ligne de ce tableau:
-
-|    Decimal   | Character   |
-|    :----:   |        :----:    |
-| 97      |  a   |
-
-
-Pour des raisons pratique, certaines ressources sur internet indiquent également une description de certains caractère, ainsi que les valeurs hexadécimal/octal. La table ASCII en elle-même ne contient pas ces informations. Un exemple de ressources sur Internet:
+La table ASCII standarde est un tableau de valeurs, mettant en relation des valeures décimal allant de 0 à 127 (inclus) (et ses homologues en base 2/8/16), avec des caractères.
 
 ![Standard ASCII table](../resources/Standard-ASCII-Table_large.webp)
 
