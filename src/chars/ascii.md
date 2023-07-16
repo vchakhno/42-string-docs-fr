@@ -6,7 +6,7 @@ La table ASCII standarde est un tableau de valeurs, mettant en relation des vale
 
 ![Standard ASCII table](../resources/Standard-ASCII-Table_large.webp)
 
-On peut y retrouver l'alphabet en minuscule/majuscule, tous les chiffres, quelques caractères de ponctuations, des caractères de contrôles (intéprétés par certains programmes comme des instructions).
+On peut y retrouver l'alphabet latin en minuscule/majuscule, tous les chiffres, quelques caractères de ponctuations, des caractères de contrôles (intéprétés par certains programmes comme des instructions).
 
 # Extended ASCII Table
 
