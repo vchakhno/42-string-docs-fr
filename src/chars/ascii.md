@@ -13,7 +13,7 @@ Exemple d'une ligne de ce tableau:
 
 Pour des raisons pratique, certaines ressources sur internet indiquent également une description de certains caractère, ainsi que les valeurs hexadécimal/octal. La table ASCII en elle-même ne contient pas ces informations. Un exemple de ressources sur Internet:
 
-![Standard ASCII table](https://cdn.shopify.com/s/files/1/1014/5789/files/Standard-ASCII-Table_large.jpg?10669400161723642407)
+![Standard ASCII table](../resources/Standard-ASCII-Table_large.webp)
 
 On peut y retrouver l'alphabet en minuscule/majuscule, tous les chiffres, quelques caractères de ponctuations, des caractères de contrôles (intéprétés par certains programmes comme des instructions).
 
@@ -21,7 +21,7 @@ On peut y retrouver l'alphabet en minuscule/majuscule, tous les chiffres, quelqu
 
 La table ASCII étendu reprend les 128 caractères de la table ASCII standarde, et y rajoute à leur suite 128 autres caractères :
 
-![Standard ASCII table](https://cdn.shopify.com/s/files/1/1014/5789/files/Extended-ASCII-Table_large.jpg?14948660931384897703)
+![Standard ASCII table](../resources/Extended-ASCII-Table_large.webp)
 
 L'utilisation de la table ASCII a diminué aujourd'hui au profit de la table Unicode. Cette dernière permet de représenter un nombre considérablement plus élevé de caractères(149 186 dans sa version 15.0) permettant de couvrir les alphabets de différentes langues, des emojis, davantages de signes etc.
 
