@@ -16,7 +16,7 @@ On pourrait aussi indiqué le caractère que l'on souhaite stocké directement d
 char random = 'a';
 ```
 
-Ici, votre compilateur C remplaçera `'a'` par la valeur entière [ASCII](chars/ascii.md) correspondante, soit `97`. 'a' est un `character literal` et nous verront cela plus en détail dans la suite de ce chapitre
+Ici, votre compilateur C remplaçera `'a'` par la valeur décimal correspondante dans la table [ASCII](chars/ascii.md), soit `97`. 'a' est un `character literal` et nous verront cela plus en détail dans la suite de ce chapitre
 
 Nous aurions pu aussi indiqué une valeur binaire, hexadecimal, octal etc:
 
