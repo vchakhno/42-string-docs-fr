@@ -1,5 +1,6 @@
 Il existe une famille de type contenant des valeurs représentant des entiers : `long`, `int`, `short`, `char`, `long long` (ainsi que leur version non-signé)
-Plusieurs opérations arithmétique entre des données de ces types (entiers) sont possible en C : Les additions, soustractions, multiplications, divisions, modulo, incrémentation et décrémentation :
+<br>
+Plusieurs opérations arithmétique entre des données de ces types `entiers` sont possible en C : Les additions, soustractions, multiplications, divisions, modulo, incrémentation et décrémentation :
 
 ```c
 char random = 97;
@@ -30,5 +31,6 @@ Before:0x7ffc12d98e60
 After:0x7ffc12d98e64
 ```
 
-On peut voir que l'opération `tab + c` n'a pas incrémenter tab de 1 (la valeur de `c`), mais l'a incrémenté de 4 !
-Car nous ne sommes plus dans l'arithmétique des entiers, mais l'arithmétique des pointeurs. Tout cela est régis par votre compilateur. Nous décrirons l'arithmétique des pointeurs dans le chapitre [Les bases des strings](strings-basics.md)
+On peut voir que l'opération `tab + c` n'a pas ajouté 1 (la valeur de `c`) à tab , mais bien 4 !
+<br>
+Car nous ne sommes plus dans l'arithmétique des entiers, mais l'arithmétique des pointeurs. Tout cela est régis par votre compilateur. Nous décrirons l'arithmétique des pointeurs dans le chapitre [Les bases des strings](../strings-basics.md)
