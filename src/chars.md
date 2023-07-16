@@ -13,7 +13,7 @@ Etant limité à 8 bits, nous sommes donc intrinséquement limité à 256 valeur
 On pourrait aussi indiqué le caractère que l'on souhaite stocké directement durant l'initialisation :
 
 ```c
-char random = 'a'
+char random = 'a';
 ```
 
 Ici, votre compilateur C remplaçera `'a'` par la valeur entière [ASCII](chars/ascii.md) correspondante, soit `97`. 'a' est un `character literal` et nous verront cela plus en détail dans la suite de ce chapitre
