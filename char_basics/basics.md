@@ -174,6 +174,7 @@ Peut-etre que le retour a la ligne est automatiquement gere par le programme ðŸ¤
 
 <details>
 <summary>Solution</summary>
+
 ```
 #include <stdio.h>
 
