@@ -1,5 +1,8 @@
 # Quelle différence entre signé et non-signé ?<br><br>
 
+## Dans la représentation décimal d'une donnée en mémoire
+-
+
 ## Dans la mémoire
 Si l'on stock la valeur binaire `0101 1111` dans un char signé ou non-signé, en mémoire on aura toujours `0101 1111`. Il n'y a donc là aucune différence.
 
@@ -32,4 +35,4 @@ Grâce à ce `cast explicite`, nous avons indiqué que `b` au moment de sa compa
 
 # Char, signed char, équivalent ?
 
-Cela dépend majoritairement de votre compilateur, il n'y a pas de bonne réponse ici. Si vous utiliser `gcc` vous pouvez utiliser pouvez utiliser le flag `-fsigned-char` ou `-funsigned-char` pour indiquer si `char` est par défaut signé ou non-signé.
+Cela dépend majoritairement de votre compilateur, il n'y a pas de bonne réponse ici. Si vous utilisez `gcc` vous pouvez utiliser pouvez utiliser le flag `-fsigned-char` ou `-funsigned-char` pour indiquer si `char` est par défaut signé ou non-signé.
