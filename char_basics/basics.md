@@ -108,3 +108,26 @@ Les characteres imprimables de la table ASCII commencent par l'espace Code ASCII
 >>Les trigraphes, quant-a-eux, ne sont plus consideres comme valides par les compilateurs (gcc genere un warning et necessite d'ajouter un flag pour la compilation, tandis que clang genere une erreur).
 
 ### Exercice
+Ecrire un programme qui lit des characteres depuis la ligne de commande et les affiche jusqu'a ce qu'il recoive un EOF.
+
+<details>
+<summary>Indices</summary>
+
+<details>
+<summary>Indice 0</summary>
+
+Utiliser les fonctions getchar et putchar
+</details>
+<details>
+<summary>Indice 1</summary>
+
+Peut-etre que le retour a la ligne est automatiquement gere par le programme 🤔?
+</details>
+</details>
+
+<details>
+<summary>Solution</summary>
+```
+Mettre ici le code du fichier minicat.c
+```
+</details>
