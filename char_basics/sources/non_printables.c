@@ -1,6 +1,6 @@
-#include <stdio.h>
-#include <unistd.h>
-#include <string.h>
+#include <stdio.h>  //for the printf function
+#include <unistd.h> //for the write function
+#include <string.h> //for the strlen function
 
 void ft_putstr(char *str)
 {
