@@ -144,6 +144,6 @@ majuscule$
 > - On peut vérifier ou changer la nature d'un char selon sa position dans la table ASCII
 
 > Petits exercices :
-> - Implémenter `isalnum`, `isspace`, `tolower`
+> - Implémenter `isalnum`, `isspace`, `toupper`
 > - Utiliser les parties d'avant pour implémenter un cat qui répète tout en majuscule
 > - Bonus : Faire une fonction qui lit un int depuis l'entrée standard avec seulement `getchar`.
