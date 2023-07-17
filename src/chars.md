@@ -17,11 +17,13 @@ Voici un schéma de la parti de la mémoire contenant notre `char`:
 
 ![Memory layout representation](resources/ram_representation.png)
 
-Etant limité à 1 Byte (soit 8 bits), nous sommes donc intrinséquement limité à 256 valeurs différentes représentable. De l'entier `0` représenté en binaire par `0000 0000` - à l'entier `255` représenté en binaire par `1111 1111`.[^1]
+Etant limité à 1 Byte (soit 8 bits), nous sommes donc intrinséquement limité à 256 valeurs différentes représentable. De l'entier `0` représenté en binaire par `0000 0000` - à l'entier `255` représenté en binaire par `1111 1111`.
+
+> Il existe une notion de type signé et non-signé qui changeront cet interval de valeurs, mais nous verront cela dans la suite de ce chapitre.
 
 ## Différentes notations
 
-Au lieu d'écrire directement l'entier `97``, on pourrait écrire le caractère ASCII correspondant à cette valeur :
+Au lieu d'écrire directement l'entier `97`, on pourrait écrire le caractère ASCII correspondant à cette valeur :
 
 ```c
 char letter = 'a';
@@ -63,5 +65,3 @@ Notre variable `letter` contient l'entier `97`. Dans la table [ASCII](chars/asci
 Si vous avez bien compris que c'est donc l'entier `97` qui est passé à printf, vous comprendrez que l'on aurait très bien pu stocker cette valeur dans un `int`, voire un `long`, et tenter de l'afficher avec `printf()`, et le résultat aurait été le même.
 
 <hr>
-
-[^1]: Il existe une notion de `type signé` et `type non-signé` qui changeront cette plage d'entier, et nous verront cela dans un autre chapitre.

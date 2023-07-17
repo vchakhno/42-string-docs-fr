@@ -1,15 +1,15 @@
 # Séquence d'échappements
 
 Les séquences d'échappements sont des suites de caractères qui représentant certains caractères spéciaux, qui ne pourraient autrement pas être facilement représenté par un programmeur<br><br>
-Ils commencent forcément par un backslash `\` et sont suivi par un ou plusieurs caractères. Il est important de noté qu'une séquence, exemple `\n`, sera remplaçé par votre compilateur par leur valeur décimal correspondante. `\n` sera remplaçé par l'entier `10`, et c'est cet entier qui sera stocké en mémoire(sur 8 bits toujours).<br><br>
+Ils commencent forcément par un backslash `\` et sont suivi par un ou plusieurs caractères. Il est important de noter qu'une séquence, exemple `\n`, sera remplaçé par votre compilateur par leur valeur décimal correspondante. `\n` sera remplaçé par l'entier `10`, et c'est cet entier qui sera stocké en mémoire(sur 8 bits toujours).<br><br>
 Pour illustrer cela, un exemple :
 ```c
 char c = '\n';
 char b = 10;
 ```
 `c` et `b` sont égaux, ils contiennent tout d'eux en mémoire l'entier 10, il n'y a aucune différence entre eux. L'entier `10` représente un saut de ligne, et `\n` sera remplaçé par l'entier `10` par votre compilateur.<br>
-Au moment d'afficher cet entier à l'écran, grâce à `printf()`, `putchar()` ou tout autre fonction, ce sont ces fonctions qui se chargeront de représenter visuellement ce saut de ligne.<br><br>
-Il est intéressant de noter qu'il n'est pas tout le temps question uniquement de représentation visuel. La séquence d'échappement `\a` (sa valeur décimal est `7`) par exemple, permet lorsqu'elle est imprimé à l'écran avec `printf`, d'émettre une alerte sonore. Rien ne sera visuellement affiché.<br><br>
+Au moment d'afficher le caractère ASCII correspondant à l'écran, grâce à `printf()`, `putchar()` ou tout autre fonction, ce sont ces fonctions qui se chargeront de représenter visuellement ce saut de ligne.<br><br>
+Il est intéressant de noter qu'il n'est pas tout le temps question uniquement de représentation visuel. La séquence d'échappement `\a` (sa valeur décimal dans la table ASCII est `7`) par exemple, permet lorsqu'elle est imprimé à l'écran avec `printf` ou autre, d'émettre une alerte sonore. Rien ne sera visuellement affiché.<br><br>
 Voici une liste non-exhaustive de séquences d'échappement:
 
 | Escape sequence | Description |

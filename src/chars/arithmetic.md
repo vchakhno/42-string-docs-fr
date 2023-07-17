@@ -22,7 +22,8 @@ int tab[2] = {0, 1};
 char c = 1;
 int	*result;
 
-printf("Before:%p\nAfter:%p\n", tab, tab + c);
+printf("Before:%p\n", tab);
+printf("After:%p\n", tab + c);
 ```
 
 Output:
