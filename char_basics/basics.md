@@ -251,4 +251,6 @@ La libc est livree avec bon nombre de fonctions qui donnent des informations sur
 - `int isdigit(int c)` qui renvoie une valeur differente de 0 si elle recoit un chiffre en base 10 et 0 sinon
 - `int isspace(int c)` qui renvoie une valeur differente de 0 si elle recoit un **whitespace** (detailles dans `man isspace` et 0 sinon.
 - `int isupper(int c)` qui renvoie une valeur diffrente de 0 si elle recoit une lettre majuscule et 0 sinon
+
 Le `man` de chacune de ces fonctions pointe sur la meme page du `man 3` qui donne la description de toutes les fonctions associees.
+
