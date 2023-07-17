@@ -78,3 +78,33 @@ Les valeurs allant de 32 a 126 sont reservees aux characteres imprimables.
 
 #### Les characteres de controle
 
+Ces characteres etaient a l'origine utilises pour controller les appareils (par exemple les imprimantes) qui utilisaient la table ASCII. Les characteres importants a connaitre en C sont :
+- `NUL` : Code ASCII (0), il se note `^@` et s'ecrit `'\0'` ou `0` dans le code source d'un programme C. Il est maintenant utilise pour indiquer la fin d'une chaine de characteres
+- `^C` : Code ASCII (3) . Signifiant a l'origine la fin d'un texte, il est maintenant utilise pour envoyer un `SIGINT` a un programme C en cours d'execution
+- `EOT` : Code ASCII (4). Le charactere de fin de transmission. Note `^D`. Le `^D` sert maintenant a envoyer un EOF a un programme C lors de la lecture (depuis un fichier ou l'entree standard).
+- `BS` : Code ASCII (8). Le backspace. Note `'\b'` dans le code source d'un programme C, ce charactere permet de bouger le curseur d'un charactere en arriere si le charactere precedent n'est pas un `'\n'`
+- `HT` : Code ASCII (9). La tabulation horizontale. Note `'\t'` dans le code source d'un programme C, ce charactere permet de bouger le curseur jusqu'au prochain "tabstop" sur la ligne.
+- `LF` : Code ASCII (10). Le retour a la ligne. Note `'\n'` dans le code source d'un programme C, ce charactere permet de bouger le curseur jusqu'a la ligne suivante.
+- `FF` : Code ASCII (12). Form feed ou saut de page. Permettait a l'origine d'indiquer a l'appareil le lisant de passer a une nouvelle page. Note `'\f'` dans le code source d'un programme C, il permet maintenant de passer a la ligne suivante tout en restant au meme niveau dans la ligne que sur la ligne precedente (voir programme en exemple pour clarification).
+- `CR` : Code ASCII (13). Le retour charriot. Note `'\r'` dans le code source d'un programme C, il permet de replacer le curseur au debut de la ligne (permettant ainsi d'ecraser un a un les characteres deja affiches avec des nouveaux).
+
+> Note sur le charactere `EOF` :
+> Le charactere `EOF`(end of file) n'est pas present dans la table ASCII de base. En C, il est defini comme un charactere negatif sans valeur imposee et sert a indiquer l'absence de donnees supplementaires lors de la lecture.
+
+#### Les characteres imprimables
+
+Les characteres imprimables de la table ASCII commencent par l'espace Code ASCII (32) et se terminent par `'~'`.
+
+> Note sur les digraphes et les trigraphes
+> Les langages de programmation anterieurs au C et le C lui-meme ont introduit des characteres qui n'etaient a l'origines pas disponibles sur tous les claviers d'ordinateurs (comme `'{'`, `'['` ou '#'). Pour pallier a ce probleme, des combinaisons de characteres furent rendues interpretables par le preprocesseur.
+>> Les *digraphes* sont des sequences de deux characteres ayant pour but de remplacer les characteres manquant sur les claviers de l'epoque. Voici par exemple ceux pour les accolades et pour les crochets:
+>>- `<%` correspond a `{` et `%>` correspond a `}`
+>>- `<:` correspond a `[` et `:>` correspond a `]`
+>>L'ecriture `char str<::> = "Hello World";` est donc parfaitement equivalente `char str[] = "Hello World";`
+>>Les digraphes sont toujours interpretes par les compilateurs modernes mais ne sont pas consideres comme valides par la norme de 42.
+>> Les *trigraphes* sont des sequences de trois characteres visant au meme but de remplacer les characteres manquant. Ils commencent tous par deux ? et se terminent par un charactere qui represente le signe de ponctuation qu'ils remplacent. Voici de meme, ceux pour les accolades et les crochets:
+>>- `??)` correspond a `)` et `??(` correspond a `[`
+>>- `??<` correspond a `{` et `??>` correspond a `}`
+>>Les trigraphes, quant-a-eux, ne sont plus consideres comme valides par les compilateurs (gcc genere un warning et necessite d'ajouter un flag pour la compilation, tandis que clang genere une erreur).
+
+### Exercice
