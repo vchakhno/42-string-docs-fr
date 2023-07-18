@@ -8,7 +8,7 @@
 Un **literal** est, en programmation informatique, une valeur **fixe** dans le code source d'un programme.
 Par exemple, lorsqu'on ecrit l'assignement `int x = 1;`, la valeur 1 est un "integer literal".
 La notion de literal s'oppose donc a celle de variable. Definissons la fonction suivante, pour clarifier l'idee de literal.
-```
+```c
 int	foo(int x)
 {
 	return (x + 2);
@@ -94,7 +94,7 @@ Ces characteres etaient a l'origine utilises pour controller les appareils (par 
 <details>
 <summary>Un programme qui teste les differents characteres non imprimables</summary>
 
-```
+```c
 #include <stdio.h>  //for the printf function
 #include <unistd.h> //for the write function
 #include <string.h> //for the strlen function
@@ -168,14 +168,24 @@ Utiliser les fonctions getchar et putchar
 <details>
 <summary>Indice 1</summary>
 
+Faire une boucle avec ces deux fonctions
+</details>
+<details>
+<summary>Indice 2</summary>
+
 Peut-etre que le retour a la ligne est automatiquement gere par le programme 🤔?
+</details>
+<details>
+<summary>Indice 3</summary>
+
+Comment envoyer un EOF a son programme
 </details>
 </details>
 
 <details>
 <summary>Solution</summary>
 
-```
+```c
 #include <stdio.h>
 
 int main(void)
@@ -221,7 +231,7 @@ Comme presente au debut de cette partie, un `char` est une valeur entiere. On pe
 
 On peut donc utiliser ces proprietes des chars pour ecrire notre fonction `ft_print_alphabet` de la Piscine C (avec la fonction putchar de la libc):
 
-```
+```c
 #include <stdio.h>
 
 void ft_print_alphabet(void)
@@ -245,12 +255,70 @@ int main(void)
 
 ### Les fonctions des chars
 
-La libc est livree avec bon nombre de fonctions qui donnent des informations sur les chars. Pour les raisons detaillees plus haut, elles prennent un `int` en parametre et renvoient un `int`. Nous avons parmi les plus utilisees :
+La libc est livree avec bon nombre de fonctions qui donnent des informations sur les chars. Pour les raisons detaillees plus haut, elles prennent un `int` en parametre et renvoient un `int`. Pour les utiliser, il faut inclure le header `ctype.h`. Nous avons parmi les plus utilisees :
 - `int isalnum(int c)` qui renvoie une valeur differente de 0 si elle recoit un charactere alphanumerique et 0 sinon
 - `int isalpha(int c)` qui renvoie une valeur differente de 0 si elle recoit un charactere alphabetique et 0 sinon
 - `int isdigit(int c)` qui renvoie une valeur differente de 0 si elle recoit un chiffre en base 10 et 0 sinon
 - `int isspace(int c)` qui renvoie une valeur differente de 0 si elle recoit un **whitespace** (detailles dans `man isspace` et 0 sinon.
 - `int isupper(int c)` qui renvoie une valeur diffrente de 0 si elle recoit une lettre majuscule et 0 sinon
+- `int tolower(int c)` qui renvoie c en minuscule si c represente une lettre majuscule et c si la conversion n'est pas possible
+- `int toupper(int c)` qui fonctionne reciproquement
+
 
 Le `man` de chacune de ces fonctions pointe sur la meme page du `man 3` qui donne la description de toutes les fonctions associees.
 
+### Exercice
+
+Ecrire un programme qui affiche "Hello World!" sans utiliser un seul ***character*** literal.
+L'usage de la table ASCII est bien evidemment plus que recommande.
+
+<details>
+<summary>Indices</summary>
+
+<details>
+<summary>Indice 0</summary>
+
+La valeur de 'H' et de 'h' dans la table ASCII sont disponibles dans `man ascii`.
+
+</details>
+<details>
+<summary>Indice 1</summary>
+
+N'utiliser qu'un seul integer literal
+</details>
+<details>
+<summary>Indice 2</summary>
+
+Pour s'eviter des calculs on pourra utiliser les fonctions `tolower` et `toupper`
+</details>
+</details>
+
+<details>
+<summary>Solution</summary>
+
+```c
+#include <stdio.h>
+#include <ctype.h>
+
+int main(void)
+{
+  int c;
+
+  c = 0x68; //Le code ASCII de 'h' en hexadecimal
+  putchar(toupper(c)); // 'H'
+  putchar(c - 3); //'e'
+  putchar(c + 4); //'l'
+  putchar(c + 4); //'l'
+  putchar(c + 7); //'o'
+  putchar(32); //Le code ASCII de ' ' en decimal
+  c += 15; //c vaut maintenant 'w'
+  putchar(toupper(c)); // 'W'
+  putchar(c - 8); // 'o'
+  putchar(c - 5); // 'r'
+  putchar(c - 11); // 'l'
+  putchar(c - 19); // 'd'
+  putchar(0041); // Le code ASCII de '!' en octal
+  return (0);
+}
+```
+</details>
