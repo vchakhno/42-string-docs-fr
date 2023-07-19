@@ -240,7 +240,7 @@ void ft_print_alphabet(void)
 
   while (c <= 'z')
     {
-      if (putchar(c) == 0)
+      if (putchar(c) != EOF)
 	return ;
       c++;
     }
